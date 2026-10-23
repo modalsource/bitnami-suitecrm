@@ -102,6 +102,26 @@ FROM ${BASE_IMAGE}
 ARG PHP_VERSION=8.2.35
 ENV PHP_VERSION="${PHP_VERSION}"
 
+# 0) CVE-hardening (aggiunto 2026-10): bullseye è EOL dal 31/08/2026; i pacchetti
+#    OS della base Bitnami (fermi a feb 2024) vengono portati all'ultimo stato
+#    pubblicato della LTS (snapshot 31/08/2026), che include tutte le fix di
+#    sicurezza fino a fine LTS. Elimina la gran parte dei CVE fixabili del layer
+#    Debian (baseline Trivy: 1802 CVE, vedi bitnami-rebuild/logs/trivy-*).
+#    Il PHP 8.2 del builder è linkato allo stesso upstream => ABI compatibile
+#    (glibc è backward-compatible); le versioni runtime non scendono mai sotto
+#    quelle viste dal builder.
+RUN set -eux; \
+    { \
+      echo 'deb http://snapshot.debian.org/archive/debian/20260831T120000Z bullseye main'; \
+      echo 'deb http://snapshot.debian.org/archive/debian-security/20260831T120000Z bullseye-security main'; \
+    } > /etc/apt/sources.list; \
+    echo 'Acquire::Check-Valid-Until "false"; Acquire::Retries "10"; Acquire::http::Timeout "120";' \
+        > /etc/apt/apt.conf.d/99-archive; \
+    apt-get update; \
+    apt-get upgrade -y; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
+
 # Librerie runtime collegate dal PHP compilato. Sono già tutte presenti
 # nell'immagine Bitnami (verificato: "0 newly installed"): qui si forza solo la
 # garanzia di presenza/installazione con --no-upgrade, evitando di pescare i

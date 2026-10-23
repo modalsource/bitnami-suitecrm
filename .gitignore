@@ -1,1 +1,2 @@
 bitnami-rebuild/images/suitecrm-7.14.2-debian-11-r10.arm64.tar
+.trivy-cache/
