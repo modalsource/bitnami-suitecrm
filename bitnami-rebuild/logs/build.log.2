@@ -1,0 +1,397 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 4.51kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/bitnami/minideb:bullseye
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/14] FROM docker.io/bitnami/minideb:bullseye@sha256:616d038a52dec18ddff67eaa0bdb6775e81143a92e0f8c8f179191a77a853bfc
+#4 resolve docker.io/bitnami/minideb:bullseye@sha256:616d038a52dec18ddff67eaa0bdb6775e81143a92e0f8c8f179191a77a853bfc done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 6.01kB done
+#5 DONE 0.0s
+
+#6 [ 2/14] COPY prebuildfs /
+#6 CACHED
+
+#7 [ 3/14] RUN echo 'Acquire::Check-Valid-Until "false"; Acquire::Retries "20"; Acquire::http::Timeout "120"; Acquire::https::Timeout "120";' > /etc/apt/apt.conf.d/99-snapshot ;     {       echo "deb https://snapshot.debian.org/archive/debian/20240202T180000Z bullseye main" ;       echo "deb https://snapshot.debian.org/archive/debian-security/20240202T180000Z bullseye-security main" ;     } > /etc/apt/sources.list ;     rm -f /etc/apt/sources.list.d/* ; true
+#7 DONE 0.1s
+
+#8 [ 4/14] RUN install_packages acl ca-certificates cron curl libaudit1 libbrotli1 libbsd0 libbz2-1.0 libcap-ng0 libcom-err2 libcrypt1 libcurl4 libexpat1 libffi7 libfftw3-double3 libfontconfig1 libfreetype6 libgcc-s1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed6 libicu67 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmd0 libmemcached11 libncurses6 libnettle8 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre2-8-0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline8 librtmp1 libsasl2-2 libsodium23 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libwebp6 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 openssl procps zlib1g
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 1.512 W: Failed to fetch https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 1.512 W: Failed to fetch https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 1.512 W: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 1.517 Reading package lists...
+#8 1.521 Building dependency tree...
+#8 1.521 Reading state information...
+#8 1.523 Package ca-certificates is not available, but is referred to by another package.
+#8 1.523 This may mean that the package is missing, has been obsoleted, or
+#8 1.523 is only available from another source
+#8 1.523 
+#8 1.523 Package libxml2 is not available, but is referred to by another package.
+#8 1.523 This may mean that the package is missing, has been obsoleted, or
+#8 1.523 is only available from another source
+#8 1.523 
+#8 1.524 E: Unable to locate package acl
+#8 1.524 E: Package 'ca-certificates' has no installation candidate
+#8 1.524 E: Unable to locate package cron
+#8 1.524 E: Unable to locate package curl
+#8 1.524 E: Unable to locate package libbrotli1
+#8 1.524 E: Unable to locate package libbsd0
+#8 1.524 E: Unable to locate package libcurl4
+#8 1.524 E: Unable to locate package libexpat1
+#8 1.524 E: Unable to locate package libfftw3-double3
+#8 1.524 E: Unable to locate package libfontconfig1
+#8 1.524 E: Unable to locate package libfreetype6
+#8 1.524 E: Unable to locate package libglib2.0-0
+#8 1.524 E: Couldn't find any package by glob 'libglib2.0-0'
+#8 1.524 E: Couldn't find any package by regex 'libglib2.0-0'
+#8 1.524 E: Unable to locate package libgomp1
+#8 1.524 E: Unable to locate package libicu67
+#8 1.524 E: Unable to locate package libjpeg62-turbo
+#8 1.524 E: Unable to locate package liblcms2-2
+#8 1.524 E: Unable to locate package libldap-2.4-2
+#8 1.524 E: Couldn't find any package by glob 'libldap-2.4-2'
+#8 1.524 E: Couldn't find any package by regex 'libldap-2.4-2'
+#8 1.524 E: Unable to locate package liblqr-1-0
+#8 1.524 E: Unable to locate package libltdl7
+#8 1.524 E: Unable to locate package libmagickcore-6.q16-6
+#8 1.524 E: Couldn't find any package by glob 'libmagickcore-6.q16-6'
+#8 1.524 E: Couldn't find any package by regex 'libmagickcore-6.q16-6'
+#8 1.524 E: Unable to locate package libmagickwand-6.q16-6
+#8 1.524 E: Couldn't find any package by glob 'libmagickwand-6.q16-6'
+#8 1.524 E: Couldn't find any package by regex 'libmagickwand-6.q16-6'
+#8 1.524 E: Unable to locate package libmd0
+#8 1.524 E: Unable to locate package libmemcached11
+#8 1.524 E: Unable to locate package libncurses6
+#8 1.524 E: Unable to locate package libnghttp2-14
+#8 1.524 E: Unable to locate package libonig5
+#8 1.524 E: Unable to locate package libpng16-16
+#8 1.524 E: Unable to locate package libpq5
+#8 1.524 E: Unable to locate package libpsl5
+#8 1.524 E: Unable to locate package libreadline8
+#8 1.524 E: Unable to locate package librtmp1
+#8 1.524 E: Unable to locate package libsasl2-2
+#8 1.524 E: Unable to locate package libsodium23
+#8 1.524 E: Unable to locate package libsqlite3-0
+#8 1.524 E: Unable to locate package libssh2-1
+#8 1.524 E: Unable to locate package libsybdb5
+#8 1.524 E: Unable to locate package libtidy5deb1
+#8 1.524 E: Unable to locate package libwebp6
+#8 1.524 E: Unable to locate package libx11-6
+#8 1.524 E: Unable to locate package libxau6
+#8 1.524 E: Unable to locate package libxcb1
+#8 1.524 E: Unable to locate package libxdmcp6
+#8 1.524 E: Unable to locate package libxext6
+#8 1.524 E: Package 'libxml2' has no installation candidate
+#8 1.524 E: Unable to locate package libxslt1.1
+#8 1.524 E: Couldn't find any package by glob 'libxslt1.1'
+#8 1.524 E: Couldn't find any package by regex 'libxslt1.1'
+#8 1.524 E: Unable to locate package libzip4
+#8 1.524 E: Unable to locate package openssl
+#8 1.524 E: Unable to locate package procps
+#8 1.524 apt failed, retrying
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 4.043 W: Failed to fetch https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 4.043 W: Failed to fetch https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 4.043 W: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 4.048 Reading package lists...
+#8 4.052 Building dependency tree...
+#8 4.052 Reading state information...
+#8 4.055 Package ca-certificates is not available, but is referred to by another package.
+#8 4.055 This may mean that the package is missing, has been obsoleted, or
+#8 4.055 is only available from another source
+#8 4.055 
+#8 4.055 Package libxml2 is not available, but is referred to by another package.
+#8 4.055 This may mean that the package is missing, has been obsoleted, or
+#8 4.055 is only available from another source
+#8 4.055 
+#8 4.055 E: Unable to locate package acl
+#8 4.055 E: Package 'ca-certificates' has no installation candidate
+#8 4.055 E: Unable to locate package cron
+#8 4.055 E: Unable to locate package curl
+#8 4.055 E: Unable to locate package libbrotli1
+#8 4.055 E: Unable to locate package libbsd0
+#8 4.055 E: Unable to locate package libcurl4
+#8 4.055 E: Unable to locate package libexpat1
+#8 4.055 E: Unable to locate package libfftw3-double3
+#8 4.055 E: Unable to locate package libfontconfig1
+#8 4.055 E: Unable to locate package libfreetype6
+#8 4.055 E: Unable to locate package libglib2.0-0
+#8 4.055 E: Couldn't find any package by glob 'libglib2.0-0'
+#8 4.055 E: Couldn't find any package by regex 'libglib2.0-0'
+#8 4.055 E: Unable to locate package libgomp1
+#8 4.055 E: Unable to locate package libicu67
+#8 4.055 E: Unable to locate package libjpeg62-turbo
+#8 4.055 E: Unable to locate package liblcms2-2
+#8 4.055 E: Unable to locate package libldap-2.4-2
+#8 4.055 E: Couldn't find any package by glob 'libldap-2.4-2'
+#8 4.055 E: Couldn't find any package by regex 'libldap-2.4-2'
+#8 4.055 E: Unable to locate package liblqr-1-0
+#8 4.055 E: Unable to locate package libltdl7
+#8 4.055 E: Unable to locate package libmagickcore-6.q16-6
+#8 4.055 E: Couldn't find any package by glob 'libmagickcore-6.q16-6'
+#8 4.055 E: Couldn't find any package by regex 'libmagickcore-6.q16-6'
+#8 4.055 E: Unable to locate package libmagickwand-6.q16-6
+#8 4.055 E: Couldn't find any package by glob 'libmagickwand-6.q16-6'
+#8 4.055 E: Couldn't find any package by regex 'libmagickwand-6.q16-6'
+#8 4.055 E: Unable to locate package libmd0
+#8 4.055 E: Unable to locate package libmemcached11
+#8 4.055 E: Unable to locate package libncurses6
+#8 4.055 E: Unable to locate package libnghttp2-14
+#8 4.055 E: Unable to locate package libonig5
+#8 4.055 E: Unable to locate package libpng16-16
+#8 4.055 E: Unable to locate package libpq5
+#8 4.055 E: Unable to locate package libpsl5
+#8 4.055 E: Unable to locate package libreadline8
+#8 4.055 E: Unable to locate package librtmp1
+#8 4.055 E: Unable to locate package libsasl2-2
+#8 4.055 E: Unable to locate package libsodium23
+#8 4.055 E: Unable to locate package libsqlite3-0
+#8 4.055 E: Unable to locate package libssh2-1
+#8 4.055 E: Unable to locate package libsybdb5
+#8 4.055 E: Unable to locate package libtidy5deb1
+#8 4.055 E: Unable to locate package libwebp6
+#8 4.055 E: Unable to locate package libx11-6
+#8 4.055 E: Unable to locate package libxau6
+#8 4.055 E: Unable to locate package libxcb1
+#8 4.055 E: Unable to locate package libxdmcp6
+#8 4.055 E: Unable to locate package libxext6
+#8 4.055 E: Package 'libxml2' has no installation candidate
+#8 4.055 E: Unable to locate package libxslt1.1
+#8 4.055 E: Couldn't find any package by glob 'libxslt1.1'
+#8 4.055 E: Couldn't find any package by regex 'libxslt1.1'
+#8 4.055 E: Unable to locate package libzip4
+#8 4.055 E: Unable to locate package openssl
+#8 4.055 E: Unable to locate package procps
+#8 4.056 apt failed, retrying
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease: No system certificates available. Try installing ca-certificates.
+#8 6.715 W: Failed to fetch https://snapshot.debian.org/archive/debian/20240202T180000Z/dists/bullseye/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 6.715 W: Failed to fetch https://snapshot.debian.org/archive/debian-security/20240202T180000Z/dists/bullseye-security/InRelease  Certificate verification failed: The certificate is NOT trusted. The certificate issuer is unknown.  Could not handshake: Error in the certificate verification. [IP: 199.232.142.132 443]
+#8 6.715 W: Some index files failed to download. They have been ignored, or old ones used instead.
+#8 6.720 Reading package lists...
+#8 6.724 Building dependency tree...
+#8 6.724 Reading state information...
+#8 6.727 Package ca-certificates is not available, but is referred to by another package.
+#8 6.727 This may mean that the package is missing, has been obsoleted, or
+#8 6.727 is only available from another source
+#8 6.727 
+#8 6.727 Package libxml2 is not available, but is referred to by another package.
+#8 6.727 This may mean that the package is missing, has been obsoleted, or
+#8 6.727 is only available from another source
+#8 6.727 
+#8 6.727 E: Unable to locate package acl
+#8 6.727 E: Package 'ca-certificates' has no installation candidate
+#8 6.727 E: Unable to locate package cron
+#8 6.727 E: Unable to locate package curl
+#8 6.727 E: Unable to locate package libbrotli1
+#8 6.727 E: Unable to locate package libbsd0
+#8 6.727 E: Unable to locate package libcurl4
+#8 6.727 E: Unable to locate package libexpat1
+#8 6.727 E: Unable to locate package libfftw3-double3
+#8 6.727 E: Unable to locate package libfontconfig1
+#8 6.727 E: Unable to locate package libfreetype6
+#8 6.727 E: Unable to locate package libglib2.0-0
+#8 6.727 E: Couldn't find any package by glob 'libglib2.0-0'
+#8 6.727 E: Couldn't find any package by regex 'libglib2.0-0'
+#8 6.727 E: Unable to locate package libgomp1
+#8 6.727 E: Unable to locate package libicu67
+#8 6.727 E: Unable to locate package libjpeg62-turbo
+#8 6.727 E: Unable to locate package liblcms2-2
+#8 6.727 E: Unable to locate package libldap-2.4-2
+#8 6.727 E: Couldn't find any package by glob 'libldap-2.4-2'
+#8 6.727 E: Couldn't find any package by regex 'libldap-2.4-2'
+#8 6.727 E: Unable to locate package liblqr-1-0
+#8 6.727 E: Unable to locate package libltdl7
+#8 6.727 E: Unable to locate package libmagickcore-6.q16-6
+#8 6.727 E: Couldn't find any package by glob 'libmagickcore-6.q16-6'
+#8 6.727 E: Couldn't find any package by regex 'libmagickcore-6.q16-6'
+#8 6.727 E: Unable to locate package libmagickwand-6.q16-6
+#8 6.727 E: Couldn't find any package by glob 'libmagickwand-6.q16-6'
+#8 6.727 E: Couldn't find any package by regex 'libmagickwand-6.q16-6'
+#8 6.727 E: Unable to locate package libmd0
+#8 6.727 E: Unable to locate package libmemcached11
+#8 6.727 E: Unable to locate package libncurses6
+#8 6.727 E: Unable to locate package libnghttp2-14
+#8 6.727 E: Unable to locate package libonig5
+#8 6.727 E: Unable to locate package libpng16-16
+#8 6.727 E: Unable to locate package libpq5
+#8 6.727 E: Unable to locate package libpsl5
+#8 6.727 E: Unable to locate package libreadline8
+#8 6.727 E: Unable to locate package librtmp1
+#8 6.727 E: Unable to locate package libsasl2-2
+#8 6.727 E: Unable to locate package libsodium23
+#8 6.727 E: Unable to locate package libsqlite3-0
+#8 6.727 E: Unable to locate package libssh2-1
+#8 6.727 E: Unable to locate package libsybdb5
+#8 6.727 E: Unable to locate package libtidy5deb1
+#8 6.727 E: Unable to locate package libwebp6
+#8 6.727 E: Unable to locate package libx11-6
+#8 6.727 E: Unable to locate package libxau6
+#8 6.727 E: Unable to locate package libxcb1
+#8 6.727 E: Unable to locate package libxdmcp6
+#8 6.727 E: Unable to locate package libxext6
+#8 6.727 E: Package 'libxml2' has no installation candidate
+#8 6.727 E: Unable to locate package libxslt1.1
+#8 6.727 E: Couldn't find any package by glob 'libxslt1.1'
+#8 6.727 E: Couldn't find any package by regex 'libxslt1.1'
+#8 6.727 E: Unable to locate package libzip4
+#8 6.727 E: Unable to locate package openssl
+#8 6.727 E: Unable to locate package procps
+#8 ERROR: process "/bin/bash -o errexit -o nounset -o pipefail -c install_packages acl ca-certificates cron curl libaudit1 libbrotli1 libbsd0 libbz2-1.0 libcap-ng0 libcom-err2 libcrypt1 libcurl4 libexpat1 libffi7 libfftw3-double3 libfontconfig1 libfreetype6 libgcc-s1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed6 libicu67 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmd0 libmemcached11 libncurses6 libnettle8 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre2-8-0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline8 librtmp1 libsasl2-2 libsodium23 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libwebp6 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 openssl procps zlib1g" did not complete successfully: exit code: 100
+------
+ > [ 4/14] RUN install_packages acl ca-certificates cron curl libaudit1 libbrotli1 libbsd0 libbz2-1.0 libcap-ng0 libcom-err2 libcrypt1 libcurl4 libexpat1 libffi7 libfftw3-double3 libfontconfig1 libfreetype6 libgcc-s1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed6 libicu67 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmd0 libmemcached11 libncurses6 libnettle8 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre2-8-0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline8 librtmp1 libsasl2-2 libsodium23 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libwebp6 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 openssl procps zlib1g:
+6.727 E: Unable to locate package libxcb1
+6.727 E: Unable to locate package libxdmcp6
+6.727 E: Unable to locate package libxext6
+6.727 E: Package 'libxml2' has no installation candidate
+6.727 E: Unable to locate package libxslt1.1
+6.727 E: Couldn't find any package by glob 'libxslt1.1'
+6.727 E: Couldn't find any package by regex 'libxslt1.1'
+6.727 E: Unable to locate package libzip4
+6.727 E: Unable to locate package openssl
+6.727 E: Unable to locate package procps
+------
+Dockerfile:35
+--------------------
+  33 |         rm -f /etc/apt/sources.list.d/* ; true
+  34 |     # Install required system packages and dependencies
+  35 | >>> RUN install_packages acl ca-certificates cron curl libaudit1 libbrotli1 libbsd0 libbz2-1.0 libcap-ng0 libcom-err2 libcrypt1 libcurl4 libexpat1 libffi7 libfftw3-double3 libfontconfig1 libfreetype6 libgcc-s1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed6 libicu67 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmd0 libmemcached11 libncurses6 libnettle8 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre2-8-0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline8 librtmp1 libsasl2-2 libsodium23 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libwebp6 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 openssl procps zlib1g
+  36 |     RUN mkdir -p /tmp/bitnami/pkg/cache/ ; cd /tmp/bitnami/pkg/cache/ ; \
+  37 |         COMPONENTS=( \
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/bash -o errexit -o nounset -o pipefail -c install_packages acl ca-certificates cron curl libaudit1 libbrotli1 libbsd0 libbz2-1.0 libcap-ng0 libcom-err2 libcrypt1 libcurl4 libexpat1 libffi7 libfftw3-double3 libfontconfig1 libfreetype6 libgcc-s1 libgcrypt20 libglib2.0-0 libgmp10 libgnutls30 libgomp1 libgpg-error0 libgssapi-krb5-2 libhogweed6 libicu67 libidn2-0 libjpeg62-turbo libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 liblcms2-2 libldap-2.4-2 liblqr-1-0 libltdl7 liblzma5 libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmd0 libmemcached11 libncurses6 libnettle8 libnghttp2-14 libonig5 libp11-kit0 libpam0g libpcre2-8-0 libpcre3 libpng16-16 libpq5 libpsl5 libreadline8 librtmp1 libsasl2-2 libsodium23 libsqlite3-0 libssh2-1 libssl1.1 libstdc++6 libsybdb5 libtasn1-6 libtidy5deb1 libtinfo6 libunistring2 libuuid1 libwebp6 libx11-6 libxau6 libxcb1 libxdmcp6 libxext6 libxml2 libxslt1.1 libzip4 openssl procps zlib1g" did not complete successfully: exit code: 100
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/68ffe2fcvaglrp2ol5cz6dg7i

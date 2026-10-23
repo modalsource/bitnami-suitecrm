@@ -1,0 +1,8 @@
+# Whitelist minimale per replicare il context di build originale di bitnami/containers
+*
+!Dockerfile
+!docker-compose.yml
+!tags-info.yaml
+!prebuildfs
+!rootfs
+!pkg-cache

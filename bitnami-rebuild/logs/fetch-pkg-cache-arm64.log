@@ -1,0 +1,56 @@
+Architettura target: arm64
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL render-template-1.0.6-7-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   118  100   118    0     0    258      0 --:--:-- --:--:-- --:--:--   258100   118  100   118    0     0    258      0 --:--:-- --:--:-- --:--:--   258
+ok  render-template-1.0.6-7-linux-arm64-debian-11.tar.gz.sha256
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL php-8.1.27-3-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   107  100   107    0     0    282      0 --:--:-- --:--:-- --:--:--   282100   107  100   107    0     0    282      0 --:--:-- --:--:-- --:--:--   282
+ok  php-8.1.27-3-linux-arm64-debian-11.tar.gz.sha256
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL apache-2.4.58-6-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   110  100   110    0     0    300      0 --:--:-- --:--:-- --:--:--   301
+ok  apache-2.4.58-6-linux-arm64-debian-11.tar.gz.sha256
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL mysql-client-11.2.2-1-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   116  100   116    0     0    323      0 --:--:-- --:--:-- --:--:--   324
+ok  mysql-client-11.2.2-1-linux-arm64-debian-11.tar.gz.sha256
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL libphp-8.1.27-2-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   110  100   110    0     0    302      0 --:--:-- --:--:-- --:--:--   303
+ok  libphp-8.1.27-2-linux-arm64-debian-11.tar.gz.sha256
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   448    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+FAIL suitecrm-7.14.2-5-linux-arm64-debian-11.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   112  100   112    0     0    301      0 --:--:-- --:--:-- --:--:--   300100   112  100   112    0     0    300      0 --:--:-- --:--:-- --:--:--   300
+ok  suitecrm-7.14.2-5-linux-arm64-debian-11.tar.gz.sha256
+ATTENZIONE: 6 file non scaricati (riprove loop di risoluzione).

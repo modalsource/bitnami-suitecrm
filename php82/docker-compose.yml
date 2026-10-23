@@ -1,0 +1,37 @@
+version: '2'
+# SuiteCRM 7.14.2-debian-11-r10 con PHP 8.2.35 (variante locale)
+# build+up:  docker compose -f php82/docker-compose.yml up -d --build
+services:
+  mariadb:
+    image: docker.io/bitnamilegacy/mariadb:11.2-debian-11
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes           # solo per sviluppo! in prod: MARIADB_ROOT_PASSWORD + credenziali dedicate
+      - MARIADB_USER=bn_suitecrm
+      - MARIADB_DATABASE=bitnami_suitecrm
+      - MARIADB_PASSWORD=bitnami123
+    volumes:
+      - 'mariadb_data:/bitnami/mariadb'
+  suitecrm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: suitecrm:7.14.2-debian-11-r10-php8.2.35
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+    environment:
+      - SUITECRM_DATABASE_HOST=mariadb
+      - SUITECRM_DATABASE_PORT_NUMBER=3306
+      - SUITECRM_DATABASE_USER=bn_suitecrm
+      - SUITECRM_DATABASE_NAME=bitnami_suitecrm
+      - SUITECRM_DATABASE_PASSWORD=bitnami123
+      - ALLOW_EMPTY_PASSWORD=yes
+      # immutabili anche col PHP 8.2 (letti dal php.ini Bitnami a runtime):
+      # PHP_MEMORY_LIMIT=512M / PHP_MAX_EXECUTION_TIME=120 / PHP_ENABLE_OPCACHE=1 ...
+    volumes:
+      - 'suitecrm_data:/bitnami/suitecrm'
+    depends_on:
+      - mariadb
+volumes:
+  mariadb_data:
+  suitecrm_data:
