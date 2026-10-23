@@ -151,6 +151,18 @@ RUN set -eux; \
     ln -s /usr/local/php82/bin/phpize     /opt/bitnami/php/bin/phpize; \
     ln -s /usr/local/php82/sbin/php-fpm   /opt/bitnami/php/sbin/php-fpm
 
+# 1-bis) Rimozione residui PHP 8.1 Bitnami, non più referenziati: extension_dir,
+# phpize e Apache ora usano la 8.2 (mod_php commentato, conf.d vuoto, unica
+# zend_extension = opcache risolta nella build 8.2). Restano: etc/ (php.ini
+# condiviso), composer/pear/pecl/phar (tooling sul PHP attivo), var/logs/tmp
+# (runtime FPM). Se servissero imagick/apcu/mongodb/xdebug con la 8.2 vanno
+# ricompilati (pecl o --with-* nella configure).
+RUN set -eux; \
+    rm -f /opt/bitnami/apache/modules/libphp.so; \
+    rm -f /opt/bitnami/php/bin/php-cgi /opt/bitnami/php/bin/phpdbg; \
+    rm -rf /opt/bitnami/php/lib/php/extensions /opt/bitnami/php/lib/php/build /opt/bitnami/php/include; \
+    /opt/bitnami/php/bin/php -v | head -1
+
 # 2) Apache: niente mod_php (libphp.so 8.1) -> proxy_fcgi verso PHP-FPM 8.2
 RUN sed -i 's|^LoadModule php_module .*|# mod_php PHP 8.1 disattivato: si usa PHP-FPM 8.2 via proxy_fcgi|' \
         /opt/bitnami/apache/conf/httpd.conf

@@ -1,0 +1,159 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 11.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/bitnamilegacy/suitecrm:7.14.2-debian-11-r10
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:bullseye-slim
+#3 DONE 0.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [builder 1/6] FROM docker.io/library/debian:bullseye-slim@sha256:e5b6442dd2e9684cf5e87d8338b5968f3b348636fc0be6d7850a381e3731a2bd
+#5 resolve docker.io/library/debian:bullseye-slim@sha256:e5b6442dd2e9684cf5e87d8338b5968f3b348636fc0be6d7850a381e3731a2bd done
+#5 DONE 0.0s
+
+#6 [stage-1  1/13] FROM docker.io/bitnamilegacy/suitecrm:7.14.2-debian-11-r10@sha256:65cbebc5aa4ef80743dfdbb64d4672dba6682dbcafe5751b4b9d3407a42dbc55
+#6 resolve docker.io/bitnamilegacy/suitecrm:7.14.2-debian-11-r10@sha256:65cbebc5aa4ef80743dfdbb64d4672dba6682dbcafe5751b4b9d3407a42dbc55 done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 782B done
+#7 DONE 0.0s
+
+#8 [builder 6/6] RUN set -eux;     ./configure --prefix=/usr/local/php82         --with-config-file-path=/opt/bitnami/php/etc         --with-config-file-scan-dir=/opt/bitnami/php/etc/conf.d         --with-openssl --with-zlib --enable-bcmath --with-bz2 --enable-calendar         --with-curl --enable-exif --enable-ftp --with-gettext --with-gmp         --enable-gd --with-jpeg --with-freetype         --with-ldap --enable-mbstring --enable-mysqlnd         --enable-intl --with-mysqli --with-pdo-mysql         --with-sqlite3 --with-pdo-sqlite         --enable-opcache --enable-pcntl --with-readline         --enable-soap --enable-sockets --with-sodium         --with-xsl --with-zip --with-tidy         --enable-fpm --with-fpm-user=daemon --with-fpm-group=daemon         --without-pear;     make -j"$(nproc)";     make install
+#8 CACHED
+
+#9 [stage-1  4/13] COPY --from=builder /usr/local/php82 /usr/local/php82
+#9 CACHED
+
+#10 [builder 2/6] RUN set -eux;     echo 'deb http://snapshot.debian.org/archive/debian/20240202T180000Z bullseye main' > /etc/apt/sources.list;     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99-archive;     apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 update;     apt-get -o Acquire::Retries=10 -o Acquire::http::Timeout=60 install -y         --no-install-recommends --allow-downgrades         libc6=2.31-13+deb11u6         libssl1.1=1.1.1w-0+deb11u1         perl-base=5.32.1-4+deb11u2         build-essential pkg-config ca-certificates curl xz-utils         libssl-dev zlib1g-dev libbz2-dev libcurl4-openssl-dev         libpng-dev libjpeg62-turbo-dev libfreetype6-dev libzip-dev         libxml2-dev libxslt1-dev libsqlite3-dev libreadline-dev         libgmp-dev libsodium-dev libldap2-dev libonig-dev libicu-dev         libtidy-dev;     rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [stage-1  2/13] RUN set -eux;     {       echo 'deb http://snapshot.debian.org/archive/debian/20260831T120000Z bullseye main';       echo 'deb http://snapshot.debian.org/archive/debian-security/20260831T120000Z bullseye-security main';     } > /etc/apt/sources.list;     echo 'Acquire::Check-Valid-Until "false"; Acquire::Retries "10"; Acquire::http::Timeout "120";'         > /etc/apt/apt.conf.d/99-archive;     apt-get update;     apt-get upgrade -y;     apt-get clean;     rm -rf /var/lib/apt/lists/*
+#11 CACHED
+
+#12 [builder 3/6] COPY src-cache/ /src-cache/
+#12 CACHED
+
+#13 [builder 4/6] RUN set -eux;     if [ -s "/src-cache/php-8.2.35.tar.xz" ]; then         echo "Uso il tarball dalla cache locale";     else         echo "Scarico il tarball da php.net...";         curl -fSL --retry 5 --connect-timeout 20             "https://www.php.net/distributions/php-8.2.35.tar.xz"             -o "/src-cache/php-8.2.35.tar.xz";     fi;     if [ ! -f "/src-cache/php-8.2.35.tar.xz.sha256" ]; then         sha256sum "/src-cache/php-8.2.35.tar.xz"             > "/src-cache/php-8.2.35.tar.xz.sha256";     fi;     cat "/src-cache/php-8.2.35.tar.xz.sha256";     cd /src-cache && sha256sum -c "php-8.2.35.tar.xz.sha256";     mkdir -p /tmp/php-src;     tar -xJf "/src-cache/php-8.2.35.tar.xz" -C /tmp/php-src
+#13 CACHED
+
+#14 [stage-1  3/13] RUN set -eux;     echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list;     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99-archive;     apt-get update;     apt-get install -y --no-install-recommends --no-upgrade         libbz2-1.0 libcurl4 libfreetype6 libgmp10 libjpeg62-turbo         libldap-2.4-2 libonig5 libpng16-16 libreadline8 libsodium23         libsqlite3-0 libxslt1.1 libzip4 libicu67 libxml2 libssl1.1         zlib1g libtidy5deb1;     apt-get clean;     rm -rf /var/lib/apt/lists/*
+#14 CACHED
+
+#15 [builder 5/6] WORKDIR /tmp/php-src/php-8.2.35
+#15 CACHED
+
+#16 [stage-1  5/13] RUN set -eux;     rm -f /opt/bitnami/php/bin/php /opt/bitnami/php/bin/php-config /opt/bitnami/php/bin/phpize;     rm -f /opt/bitnami/php/sbin/php-fpm;     ln -s /usr/local/php82/bin/php        /opt/bitnami/php/bin/php;     ln -s /usr/local/php82/bin/php-config /opt/bitnami/php/bin/php-config;     ln -s /usr/local/php82/bin/phpize     /opt/bitnami/php/bin/phpize;     ln -s /usr/local/php82/sbin/php-fpm   /opt/bitnami/php/sbin/php-fpm
+#16 CACHED
+
+#17 [stage-1  6/13] RUN set -eux;     rm -f /opt/bitnami/apache/modules/libphp.so;     rm -f /opt/bitnami/php/bin/php-cgi /opt/bitnami/php/bin/phpdbg;     rm -rf /opt/bitnami/php/lib/php/extensions /opt/bitnami/php/lib/php/build /opt/bitnami/php/include;     /opt/bitnami/php/bin/php -v | head -1
+#17 0.072 + rm -f /opt/bitnami/apache/modules/libphp.so
+#17 0.074 + rm -f /opt/bitnami/php/bin/php-cgi /opt/bitnami/php/bin/phpdbg
+#17 0.075 + rm -rf /opt/bitnami/php/lib/php/extensions /opt/bitnami/php/lib/php/build /opt/bitnami/php/include
+#17 0.099 + /opt/bitnami/php/bin/php -v
+#17 0.099 + head -1
+#17 0.112 [23-Oct-2026 13:29:01 UTC] PHP Warning:  Failed loading Zend extension 'opcache' (tried: /opt/bitnami/php/lib/php/extensions/opcache (/opt/bitnami/php/lib/php/extensions/opcache: cannot open shared object file: No such file or directory), /opt/bitnami/php/lib/php/extensions/opcache.so (/opt/bitnami/php/lib/php/extensions/opcache.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+#17 0.116 PHP 8.2.35 (cli) (built: Oct 23 2026 10:04:07) (NTS)
+#17 DONE 0.1s
+
+#18 [stage-1  7/13] RUN sed -i 's|^LoadModule php_module .*|# mod_php PHP 8.1 disattivato: si usa PHP-FPM 8.2 via proxy_fcgi|'         /opt/bitnami/apache/conf/httpd.conf
+#18 DONE 0.1s
+
+#19 [stage-1  8/13] COPY rootfs/ /
+#19 DONE 0.0s
+
+#20 [stage-1  9/13] RUN set -eux;     sed -i 's#"$1" = "/opt/bitnami/scripts/nginx-php-fpm/run.sh"#& || "$1" = "/opt/bitnami/scripts/php82/run.sh"#'         /opt/bitnami/scripts/suitecrm/entrypoint.sh;     grep -q 'php82/run.sh' /opt/bitnami/scripts/suitecrm/entrypoint.sh;     sed -i '/print_welcome_page/a . /opt/bitnami/scripts/php82/start-fpm.sh'         /opt/bitnami/scripts/suitecrm/entrypoint.sh;     grep -q 'start-fpm.sh' /opt/bitnami/scripts/suitecrm/entrypoint.sh;     chmod +x /opt/bitnami/scripts/php82/*.sh;     mkdir -p /opt/bitnami/php/etc/conf.d /opt/bitnami/php/var/run              /opt/bitnami/php/logs /opt/bitnami/php/tmp
+#20 0.085 + sed -i 's#"$1" = "/opt/bitnami/scripts/nginx-php-fpm/run.sh"#& || "$1" = "/opt/bitnami/scripts/php82/run.sh"#' /opt/bitnami/scripts/suitecrm/entrypoint.sh
+#20 0.088 + grep -q php82/run.sh /opt/bitnami/scripts/suitecrm/entrypoint.sh
+#20 0.089 + sed -i '/print_welcome_page/a . /opt/bitnami/scripts/php82/start-fpm.sh' /opt/bitnami/scripts/suitecrm/entrypoint.sh
+#20 0.090 + grep -q start-fpm.sh /opt/bitnami/scripts/suitecrm/entrypoint.sh
+#20 0.091 + chmod +x /opt/bitnami/scripts/php82/run.sh /opt/bitnami/scripts/php82/start-fpm.sh
+#20 0.094 + mkdir -p /opt/bitnami/php/etc/conf.d /opt/bitnami/php/var/run /opt/bitnami/php/logs /opt/bitnami/php/tmp
+#20 DONE 0.1s
+
+#21 [stage-1 10/13] RUN set -eux;     sed -i         -e 's|/opt/bitnami/php/lib/php/extensions|/usr/local/php82/lib/php/extensions/no-debug-non-zts-20220829|g'         /opt/bitnami/php/etc/php.ini /opt/bitnami/php/lib/php.ini;     grep -n 'extension_dir' /opt/bitnami/php/etc/php.ini
+#21 0.119 + sed -i -e 's|/opt/bitnami/php/lib/php/extensions|/usr/local/php82/lib/php/extensions/no-debug-non-zts-20220829|g' /opt/bitnami/php/etc/php.ini /opt/bitnami/php/lib/php.ini
+#21 0.122 + grep -n extension_dir /opt/bitnami/php/etc/php.ini
+#21 0.123 768:extension_dir = /usr/local/php82/lib/php/extensions/no-debug-non-zts-20220829
+#21 0.123 770:extension_dir = /usr/local/php82/lib/php/extensions/no-debug-non-zts-20220829
+#21 0.123 920:;   Be sure to appropriately set the extension_dir directive.
+#21 0.123 1035:;sqlite3.extension_dir =
+#21 DONE 0.1s
+
+#22 [stage-1 11/13] COPY gen-cert.php /tmp/gen-cert.php
+#22 DONE 0.0s
+
+#23 [stage-1 12/13] RUN set -eux;     mkdir -p /opt/bitnami/apache/conf/bitnami/certs;     php /tmp/gen-cert.php;     rm -f /tmp/gen-cert.php
+#23 0.087 + mkdir -p /opt/bitnami/apache/conf/bitnami/certs
+#23 0.090 + php /tmp/gen-cert.php
+#23 0.116 self-signed localhost certificato generato in /opt/bitnami/apache/conf/bitnami/certs
+#23 0.118 + rm -f /tmp/gen-cert.php
+#23 DONE 0.1s
+
+#24 [stage-1 13/13] RUN set -eux;     for b in /opt/bitnami/php/bin/php /opt/bitnami/php/sbin/php-fpm; do         if ldd "$b" 2>&1 | grep -q 'not found'; then             echo "ERRORE: librerie mancanti per $b:" >&2;             ldd "$b" 2>&1 | grep 'not found' >&2;             exit 1;         fi;     done;     /opt/bitnami/php/bin/php -v | head -1;     php -i 2>/dev/null | grep 'Loaded Configuration File' | grep -q '/opt/bitnami/php/etc/php.ini';     php -m | grep -qi opcache;     for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy; do         php -m | grep -q "^${mod}$";     done;     /opt/bitnami/apache/bin/httpd -t
+#24 0.091 + for b in /opt/bitnami/php/bin/php /opt/bitnami/php/sbin/php-fpm
+#24 0.091 + ldd /opt/bitnami/php/bin/php
+#24 0.092 + grep -q 'not found'
+#24 0.096 + for b in /opt/bitnami/php/bin/php /opt/bitnami/php/sbin/php-fpm
+#24 0.096 + ldd /opt/bitnami/php/sbin/php-fpm
+#24 0.096 + grep -q 'not found'
+#24 0.100 + /opt/bitnami/php/bin/php -v
+#24 0.100 + head -1
+#24 0.107 PHP 8.2.35 (cli) (built: Oct 23 2026 10:04:07) (NTS)
+#24 0.108 + php -i
+#24 0.108 + grep 'Loaded Configuration File'
+#24 0.109 + grep -q /opt/bitnami/php/etc/php.ini
+#24 0.120 + php -m
+#24 0.120 + grep -qi opcache
+#24 0.129 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.129 + php -m
+#24 0.129 + grep -q '^mysqli$'
+#24 0.138 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.138 + php -m
+#24 0.138 + grep -q '^pdo_mysql$'
+#24 0.146 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.146 + php -m
+#24 0.147 + grep -q '^curl$'
+#24 0.156 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.157 + php -m
+#24 0.157 + grep -q '^gd$'
+#24 0.167 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.167 + php -m
+#24 0.167 + grep -q '^mbstring$'
+#24 0.176 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.176 + php -m
+#24 0.176 + grep -q '^zip$'
+#24 0.185 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.186 + php -m
+#24 0.186 + grep -q '^intl$'
+#24 0.195 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.195 + php -m
+#24 0.195 + grep -q '^sodium$'
+#24 0.207 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.207 + php -m
+#24 0.207 + grep -q '^bcmath$'
+#24 0.217 + for mod in mysqli pdo_mysql curl gd mbstring zip intl sodium bcmath tidy
+#24 0.217 + php -m
+#24 0.217 + grep -q '^tidy$'
+#24 0.227 + /opt/bitnami/apache/bin/httpd -t
+#24 0.236 Syntax OK
+#24 DONE 0.3s
+
+#25 exporting to image
+#25 exporting layers 0.1s done
+#25 exporting manifest sha256:b547aa4ae0595211a48859bd37846ee22809b78b94527a878c77b87910f0404c done
+#25 exporting config sha256:9feb55bf64229014a3fa1164cf8086c18452a493d688ffe297758fae7fbd9e7b done
+#25 exporting attestation manifest sha256:b99fbceb67ea7ede73cf33ec4024d2e4169271133d02d832be0ca3e65b5598d0 done
+#25 exporting manifest list sha256:88b0cef59cfd52f92fe8bc52c1a751f6ddf3baaa37417958c7d38980ffc64f50 done
+#25 naming to docker.io/library/suitecrm:7.14.2-debian-11-r10-php8.2.35-sec2026 done
+#25 unpacking to docker.io/library/suitecrm:7.14.2-debian-11-r10-php8.2.35-sec2026 0.0s done
+#25 DONE 0.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jjm9qxetys50552p5nnw5ldwn
